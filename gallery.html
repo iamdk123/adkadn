@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ourjourney | Premium Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2e2c2c',
+                        secondary: '#000000',
+                        accent: '#d4af37',
+                        gold: '#d4af37',
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        glow: 'glow 2s ease-in-out infinite alternate',
+                        underline: 'underline 0.5s ease-out',
+                    },
+                    keyframes: {
+                        glow: {
+                            'from': { 'text-shadow': '0 0 5px rgba(212, 175, 55, 0.5)' },
+                            'to': { 'text-shadow': '0 0 15px rgba(212, 175, 55, 0.8), 0 0 20px rgba(212, 175, 55, 0.6)' }
+                        },
+                        underline: {
+                            'from': { 'transform': 'scaleX(0)' },
+                            'to': { 'transform': 'scaleX(1)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for extra luxury */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 10px;
+        }
+        
+        /* For elements that need absolute positioning */
+        .gold-particle {
+            position: absolute;
+            background: rgba(212, 175, 55, 0.4);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out;
+}
+    </style>
+</head>
+<body class="bg-gradient-to-br from-primary to-secondary text-gray-100 min-h-screen overflow-x-hidden font-montserrat">
+    <div class="container mx-auto px-4">
+        <header class="flex flex-col items-center py-4 border-b border-white/10 mb-8 relative md:flex-row md:justify-between md:py-6">
+            <div class="text-sm text-gray-400 tracking-wider mb-2 md:mb-0 md:order-none order-1" id="current-time">6:25 PM</div>
+            <div class="text-2xl font-bold bg-gradient-to-r from-gold to-amber-200 bg-clip-text text-transparent animate-glow my-2 md:my-0 md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:text-3xl">
+                Album Draft
+            </div>
+            <nav class="flex gap-4 order-3 mt-2 flex-wrap justify-center md:gap-6 md:mt-0">
+                <a href="./journey.html" class="text-gray-400 text-sm tracking-wider hover:text-gold transition-all">Home</a>
+                <a href="./gallery.html" class="text-gold font-semibold text-sm tracking-wider relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gold after:animate-underline">Gallery</a>
+                <a href="./journey.html" class="text-gray-400 text-sm tracking-wider hover:text-gold transition-all">About</a>
+            </nav>
+        </header>
+        
+        <main>
+            <h1 class="text-4xl font-light mb-2 text-center bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent leading-tight md:text-5xl">
+                Our Gallery
+            </h1>
+            <p class="text-sm text-gray-400 text-center mb-6 tracking-wider px-4 relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-px after:bg-gradient-to-r after:from-transparent after:via-gold after:to-transparent md:text-base">
+                AdkAdn Story
+            </p>
+            <button onclick="document.getElementById('audio').play()" class="text-xs font-serif font-normal text-gray-700 tracking-wide bg-gray-50 border-2 border-[#b5a300] rounded-xl py-2 px-4 shadow-lg hover:shadow-xl hover:border-[#b5a300] hover:translate-y-1 transition-all duration-300 max-w-max mx-auto mb-8 transform hover:scale-105 flex items-center gap-2">
+                🎵 Play Musik
+            </button>
+            
+            <audio id="audio" src="./assets/music/lagu2.mp3"></audio>
+            
+            
+
+            <div class="grid grid-cols-1 gap-6 mt-8 sm:grid-cols-2 md:grid-cols-3 md:gap-8">
+                <!-- Gallery items remain the same -->
+                <div class="relative overflow-hidden rounded-lg shadow-xl hover:-translate-y-1 hover:scale-105 hover:shadow-2xl transition-all duration-300 aspect-[4/3] group">
+                    <img src="./assets/images/berdua1.jpg" alt="Mountain View" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 translate-y-12 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                        <h3 class="text-white font-medium">Black DressCrode</h3>
+                        <p class="text-gray-400 text-xs">ala" mafia ya wkwk</p>
+                    </div>
+                </div>
+                
+                <div class="relative overflow-hidden rounded-lg shadow-xl hover:-translate-y-1 hover:scale-105 hover:shadow-2xl transition-all duration-300 aspect-[4/3] group">
+                    <img src="./assets/images/berdua6.jpg" alt="Lake View" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 translate-y-12 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                        <h3 class="text-white font-medium">Batik DressCode</h3>
+                        <p class="text-gray-400 text-xs">Kalo ini karena hari batik nasional guys</p>
+                    </div>
+                </div>
+                
+                <div class="relative overflow-hidden rounded-lg shadow-xl hover:-translate-y-1 hover:scale-105 hover:shadow-2xl transition-all duration-300 aspect-[4/3] group">
+                    <img src="./assets/images/berdua7.jpg" alt="Forest View" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 translate-y-12 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                        <h3 class="text-white font-medium">Aesthetic pose</h3>
+                        <p class="text-gray-400 text-xs">sudah siap prewed ya?</p>
+                    </div>
+                </div>
+                
+                <div class="relative overflow-hidden rounded-lg shadow-xl hover:-translate-y-1 hover:scale-105 hover:shadow-2xl transition-all duration-300 aspect-[4/3] group">
+                    <img src="./assets/images/berdua4.jpg" alt="Waterfall" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 translate-y-12 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                        <h3 class="text-white font-medium">Aesthetic pose lagi</h3>
+                        <p class="text-gray-400 text-xs">Ini juga biar nilai estetika nya ++</p>
+                    </div>
+                </div>
+                
+                <div class="relative overflow-hidden rounded-lg shadow-xl hover:-translate-y-1 hover:scale-105 hover:shadow-2xl transition-all duration-300 aspect-[4/3] group">
+                    <img src="./assets/images/berdua5.jpg" alt="Sunset" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 translate-y-12 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                        <h3 class="text-white font-medium">Nah kalo ini bentuk cinta</h3>
+                        <p class="text-gray-400 text-xs">it means i love this girl so much</p>
+                    </div>
+                </div>
+                
+                <div class="relative overflow-hidden rounded-lg shadow-xl hover:-translate-y-1 hover:scale-105 hover:shadow-2xl transition-all duration-300 aspect-[4/3] group">
+                    <img src="./assets/images/berdua2.jpg" alt="Wildlife" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 translate-y-12 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                        <h3 class="text-white font-medium">nah kalo ini gatau konsepnya</h3>
+                        <p class="text-gray-400 text-xs animate-fade-up">doi yang siapin assets nya, ngikut aja deh :D</p>
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-10 bg-white/5 backdrop-blur-md rounded-xl p-4 shadow-lg border border-white/10 transition-all duration-300 hover:shadow-xl w-full">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="text-white font-medium tracking-wider truncate max-w-[60%]">The Weeknd, JENNIE, Lily-Rose Depp - One Of The Girls</div>
+                    <div class="text-gray-400 text-sm" id="time-display">0:00 / 4:09</div>
+                </div>
+                <div class="w-full h-1 bg-white/10 rounded-full my-3 cursor-pointer" id="progress-container">
+                    <div class="h-full rounded-full bg-gradient-to-r from-gold to-amber-200 w-0 relative transition-all duration-100" id="progress-bar">
+                        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-gold rounded-full shadow-sm shadow-gold opacity-0 transition-opacity duration-200" id="progress-handle"></div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mt-3 gap-2">
+                    <button class="w-9 h-9 flex items-center justify-center rounded-full text-white hover:text-gold hover:bg-white/5 hover:scale-105 transition-all">
+                        <i class="fas fa-backward text-base"></i>
+                    </button>
+                    <button class="w-11 h-11 flex items-center justify-center rounded-full bg-gold text-primary shadow-md hover:shadow-lg hover:scale-105 transition-all" id="play-pause-btn">
+                        <i class="fas fa-play text-lg"></i>
+                    </button>
+                    <button class="w-9 h-9 flex items-center justify-center rounded-full text-white hover:text-gold hover:bg-white/5 hover:scale-105 transition-all">
+                        <i class="fas fa-forward text-base"></i>
+                    </button>
+                    <button class="w-9 h-9 flex items-center justify-center rounded-full text-white hover:text-gold hover:bg-white/5 hover:scale-105 transition-all">
+                        <i class="fas fa-volume-up text-base"></i>
+                    </button>
+                    <button class="w-9 h-9 flex items-center justify-center rounded-full text-white hover:text-gold hover:bg-white/5 hover:scale-105 transition-all">
+                        <i class="fas fa-random text-base"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="mt-12 text-center py-6 border-t border-white/10">
+            <div class="text-gold font-bold mb-3">ADN</div>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="#" class="text-gray-400 text-xs hover:text-gold transition-colors">Privacy</a>
+                <a href="#" class="text-gray-400 text-xs hover:text-gold transition-colors">Terms</a>
+                <a href="#" class="text-gray-400 text-xs hover:text-gold transition-colors">Contact</a>
+                <a href="#" class="text-gray-400 text-xs hover:text-gold transition-colors">localhost</a>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const audio = document.getElementById("audio");
+            const playPauseBtn = document.getElementById("play-pause-btn");
+            const progressBar = document.getElementById("progress-bar");
+            const progressContainer = document.getElementById("progress-container");
+            const progressHandle = document.getElementById("progress-handle");
+            const timeDisplay = document.getElementById("time-display");
+            
+            let isPlaying = false;
+            
+            playPauseBtn.addEventListener("click", () => {
+                if (isPlaying) {
+                    audio.pause();
+                } else {
+                    audio.play();
+                }
+            });
+            
+            audio.addEventListener("play", () => {
+                isPlaying = true;
+                playPauseBtn.innerHTML = '<i class="fas fa-pause text-lg"></i>';
+            });
+            
+            audio.addEventListener("pause", () => {
+                isPlaying = false;
+                playPauseBtn.innerHTML = '<i class="fas fa-play text-lg"></i>';
+            });
+            
+            audio.addEventListener("timeupdate", () => {
+                const currentTime = audio.currentTime;
+                const duration = audio.duration || 0;
+                const progressPercent = (currentTime / duration) * 100;
+                progressBar.style.width = `${progressPercent}%`;
+                
+                const currentMinutes = Math.floor(currentTime / 60);
+                const currentSeconds = Math.floor(currentTime % 60).toString().padStart(2, "0");
+                const durationMinutes = Math.floor(duration / 60);
+                const durationSeconds = Math.floor(duration % 60).toString().padStart(2, "0");
+                
+                timeDisplay.textContent = `${currentMinutes}:${currentSeconds} / ${durationMinutes}:${durationSeconds}`;
+            });
+            
+            progressContainer.addEventListener("click", (e) => {
+                const width = progressContainer.clientWidth;
+                const clickX = e.offsetX;
+                const duration = audio.duration;
+                audio.currentTime = (clickX / width) * duration;
+            });
+        });
+        function updateTime() {
+    const now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    // Ubah format 24 jam menjadi 12 jam
+    hours = hours % 12 || 12;
+
+    // Pastikan menit selalu dua digit
+    minutes = minutes.toString().padStart(2, "0");
+
+    const currentTimeString = `${hours}:${minutes} ${ampm}`;
+    document.getElementById("current-time").textContent = currentTimeString;
+}
+
+// Update setiap detik
+setInterval(updateTime, 1000);
+
+// Jalankan saat halaman dimuat
+updateTime();
+    </script>
+    
+</body>
+</html>
